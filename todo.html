@@ -1,0 +1,131 @@
+<html>
+<head>
+  <title> ```~~~___To Do List___~~~``` </title>
+<script src="js.js"></script>
+<style>
+h1{
+  padding:30px;
+  text-decoration: line-through;
+  font-weight: bolder;
+    text-shadow: 3px 2px #ffc;
+}
+
+.box{
+  margin:0 auto;
+  padding: 40px;
+  max-width:1000px;
+  width:100%;
+  background: #fff;
+  border-top:10px double #cc0000;
+  border-bottom:15px solid #cc0000;
+position: relative;
+border-radius: 40px;
+  opacity:0.8;
+}
+#adder{
+  width:70%;
+  color: #cc0000;
+font-size: 1.5em;
+  font-style: italic;
+  font-weight: bold;
+  float:left;
+  position: relative;
+padding:10px;
+
+background: none;
+opacity:0.5;
+}
+#date{
+  width:30%;
+  font-size: 1.5em;
+
+  float:left;
+  position: relative;
+padding:10px;
+  font-weight: bold;
+background: none;
+}
+#but{
+  text-shadow: 1px 1px #000000;
+
+  width:99%;
+  background: #cc0000;
+  padding:10px;
+  margin:10px auto ;
+  font-weight: bolder;
+  color:white;
+  border-radius: 10px;
+
+}
+
+.tab{
+  width:100%;
+  text-align: center;
+    text-shadow: 1px 1px #ffc;
+    font-size: 1.5em;
+
+}
+.tab th{
+  color:white;
+  background: #cc0000;
+
+}
+
+.tab td{
+border-bottom: 1px solid #ddd;}
+#showitem{
+  margin:0 auto;
+  padding: 40px;
+  max-width:800px;
+  width:80%;
+  border-left: 10px solid #cc0000;
+  border-right: 10px solid #cc0000;
+  outline:2px double #cc0000;
+  position: relative;;
+  opacity:0.5;
+
+}
+</style>
+</head>
+
+<body onload="show()">
+<header> <h1 align='center'> TO DO LIST </h1></header>
+
+<div class='box'>
+
+  <input type="text" id="adder" name="adder" placeholder="Do this thing">
+  <input type="text" id="date" name="date"  placeholder="At time ">
+<button id="but" type="text" onclick="adder()" > Add </button>
+
+</div>
+
+<p id='showitem'>
+
+ </p>
+
+<p id="demo""></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>
