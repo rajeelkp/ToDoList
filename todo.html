@@ -60,10 +60,18 @@ background: none;
 
 .tab{
   width:100%;
-  text-align: center;
+  text-align: justify;
+  text-indent: 20px;
     text-shadow: 1px 1px #ffc;
     font-size: 1.5em;
 
+}
+.tab img{
+  width:32px;
+  margin-top:10px;
+  padding: 5px;
+  height:auto;
+  //background:#cc0000;
 }
 .tab th{
   color:white;
@@ -85,6 +93,34 @@ border-bottom: 1px solid #ddd;}
   opacity:0.5;
 
 }
+#drag{
+  background:red url(task.png) no-repeat;
+  background-size: 32px;
+  background-position:left center;
+  text-indent: 30px;
+
+  padding: 10px;
+  color:#ffe;
+
+}
+
+.del
+{
+  position:fixed;
+margin:auto;
+  display: block;
+  z-index: 11;
+  padding:20px;
+  width:64px;
+ top:80%;
+}
+
+.del img:hover
+{
+background: #cc0000;
+opacity:0.7;
+}
+
 </style>
 </head>
 
@@ -105,9 +141,9 @@ border-bottom: 1px solid #ddd;}
 
 <p id="demo""></p>
 
-
-
-
+<div class="del">
+<img ondrop="del(k)" ondragover="allowDrop(event)" src="bin.png">
+</div>
 
 
 

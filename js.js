@@ -3,7 +3,7 @@ function object(first, last) {
     this.at = last;
 
 }
-var i=0;
+var i=0,k=0;
 
 var text='{ "todo" :  [ { "do":"Wake Up", "at":" 5:30 AM"}, { "do":" Go to office Early ! ", "at" : "7:00 AM" }, '+
     ' {"do":"Finish the Job !", "at":"5:30 PM"}  ] }' ;
@@ -17,7 +17,7 @@ function show(){
 
     for(i in obj.todo)
     {
-      res+= "<tr><td> " + obj.todo[i].do +"</td><td>  " + obj.todo[i].at + "</td><td> <a href='#' onclick='del("+i+")'> X </a> </td></tr> ";
+      res+= "<tr><td id='drag' draggable='true' ondragstart='drag("+i+")'>" + obj.todo[i].do +"</td><td>  " + obj.todo[i].at + "</td><td> <a href='#' onclick='del("+i+")'> X </a> </td></tr> ";
     }
 
     res+="</table>";
@@ -33,8 +33,8 @@ function adder(){
  try
       {
 
-         if(document.getElementById("adder").value=="") throw "String is Empty";
-    if(document.getElementById("date").value=="") throw "String is Empty";
+         if(document.getElementById("adder").value=="") throw "You haven't added a task !";
+    if(document.getElementById("date").value=="") throw "Please specify the time to do it!";
     obj.todo[++i]= new object();
       obj.todo[i].do=document.getElementById("adder").value;
       obj.todo[i].at=document.getElementById("date").value;
@@ -44,16 +44,22 @@ function adder(){
   }
 
     catch(err) {
-           document.getElementById("demo").innerHTML = "Input is " + err;
+          alert( "Sorry ! " + err ) ;
        }
 
 // if(document.getElementById("adder").value!="" && document.getElementById("date").value!="")
 //       {}
 }
 
+function allowDrop(a) {
+      a.preventDefault();
 
+  }
 
+function drag(a) {
+  k=a;
 
+}
 
 function del(j)
 {
