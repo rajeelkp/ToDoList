@@ -5,10 +5,10 @@ function object(first, last) {
 }
 var i=0,k=0;
 
-var text='{ "todo" :  [ { "do":"Wake Up", "at":" 5:30 AM"}, { "do":" Go to office Early ! ", "at" : "7:00 AM" }, '+
-    ' {"do":"Finish the Job !", "at":"5:30 PM"}  ] }' ;
+// var text='{ "todo" :  [ { "do":"Wake Up", "at":" 5:30 AM"}, { "do":" Go to office Early ! ", "at" : "7:00 AM" }, '+
+//     ' {"do":"Finish the Job !", "at":"5:30 PM"}  ] }' ;
 
-var obj = JSON.parse(text);
+var obj = JSON.parse(localStorage.getItem("text"));
 
 function show(){
 
@@ -23,10 +23,14 @@ function show(){
     res+="</table>";
 
     document.getElementById('showitem').innerHTML=res;
+    text=JSON.stringify(obj);
+   localStorage.setItem("text", text);
   }
 
 
-
+// function update(){
+//
+// }
 
 function adder(){
 
@@ -39,6 +43,7 @@ function adder(){
       obj.todo[i].do=document.getElementById("adder").value;
       obj.todo[i].at=document.getElementById("date").value;
       show();
+    
 
 
   }
