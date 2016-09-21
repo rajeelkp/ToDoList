@@ -5,10 +5,18 @@ function object(first, last) {
 }
 var i=0,k=0;
 
-// var text='{ "todo" :  [ { "do":"Wake Up", "at":" 5:30 AM"}, { "do":" Go to office Early ! ", "at" : "7:00 AM" }, '+
-//     ' {"do":"Finish the Job !", "at":"5:30 PM"}  ] }' ;
+
+if (!localStorage.getItem("text") == true) {
+  var text='{ "todo" :  [ { "do":"Wake Up", "at":" 5:30 AM"}, { "do":" Go to office Early ! ", "at" : "7:00 AM" }, '+
+      ' {"do":"Finish the Job !", "at":"5:30 PM"}  ] }' ;
+    localStorage.setItem("text", text);
+
+}
+
 
 var obj = JSON.parse(localStorage.getItem("text"));
+
+
 
 function show(){
 
@@ -43,7 +51,7 @@ function adder(){
       obj.todo[i].do=document.getElementById("adder").value;
       obj.todo[i].at=document.getElementById("date").value;
       show();
-    
+
 
 
   }
@@ -69,6 +77,6 @@ function drag(a) {
 function del(j)
 {
 alert("Item No "+j+ " : " +  obj.todo[j].do  + " is completed !");
-obj.todo.splice(j, 1);;
+obj.todo.splice(j, 1);
 show();
 }

@@ -1,0 +1,56 @@
+<html ng-app='todo'>
+<head>
+  <title>T o -  D o  -  L i s t   </title>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+<script src="ngDraggable.js"></script>
+<script src="app.js"></script>
+<link href="style.css" rel='stylesheet'/>
+</head>
+
+<body ng-controller='initial'>
+<header> <h1 align='center'> TO DO LIST </h1></header>
+<form ng-controller='inputcontroller as ip' class='box' ng-submit='ip.addto()'>
+
+  <input type="text" id="adder" ng-model="ip.todolist.do" placeholder="Do this thing" required>
+  <input type="text" id="date" ng-model="ip.todolist.at"  placeholder="At time " required>
+<input type=submit value='Add' id='but'>
+We will notify you to {{ip.todolist.do}} just before {{ip.todolist.at}}.
+</form>
+
+
+
+
+
+
+
+
+<div ng-controller='bodycontrol as job' id='showitem'>
+
+
+
+
+
+
+  <table class='tab'><tr><th> DO </th><th>At</th></tr>
+<!-- <input ng-change='job.rand()' ng-model='job.test'> {{test}} -->
+<tr ng-repeat='task in job.ob.todo'>
+
+  <td ng-drag="true"  data-allow-transform="true" ng-drag-data="$index" > {{$index+1}}. {{task.do}} </td> <td>{{task.at}}</td><td> <button ng-click="del($index)"> X </button></td></tr>
+<!-- </div> -->
+
+</table>
+
+
+
+
+
+<div class="del">
+<img ng-drop="true" ng-drop-success="del($data)" src="bin.png" >
+
+</div>
+
+
+
+</body>
+
+</html>
